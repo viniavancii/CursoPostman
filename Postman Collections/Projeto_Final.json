@@ -483,7 +483,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"Vinicius_edit@vinicius.com\",\r\n    \"first_name\": \"primeiro nome_edit\",\r\n    \"last_name\": \"ultimo nome_edit\",\r\n    \"position\": \"cargo_edit\",\r\n    \"company\": \"empresa_edit\",\r\n    \"company_industry\": \"industria_edit\"\r\n}\r\n\r\n",
+                  "raw": "{\r\n    \"email\": \"{{email_lead_edit}}\",\r\n    \"first_name\": \"{{first_name_lead_edit}}\",\r\n    \"last_name\": \"{{last_name_lead_edit}}\",\r\n    \"position\": \"{{position_lead_edit}}\",\r\n    \"company\": \"{{company_lead_edit}}\",\r\n    \"company_industry\": \"{{company_industry_lead_edit}}\"\r\n}\r\n\r\n",
                   "options": {
                     "raw": {
                       "language": "json"
