@@ -1,0 +1,66 @@
+{
+  "info": {
+    "_postman_id": "249930f4-1fb7-4f1c-8204-7a5bc872852d",
+    "name": "AULA 5 - API POSTMAN",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://postman-echo.com",
+      "_postman_id": "256f2114-abd4-4ac7-bee2-870c144d6577",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "970a47f56f35976f2b1ae001b64b96170f48d81da483a06b74dfa0f1592af4fa"
+          }
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"{{ultimo_nome}}\",\r\n    \"gender\": \"{{genero}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://gorest.co.in/public/v1/users",
+        "description": "API POSTMAN"
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "970a47f56f35976f2b1ae001b64b96170f48d81da483a06b74dfa0f1592af4fa"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "3bb21466-b00e-4734-ac3a-0d01e9eaca38",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "599ca1f6-d6f3-4509-80dc-c3f5bba95142",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
