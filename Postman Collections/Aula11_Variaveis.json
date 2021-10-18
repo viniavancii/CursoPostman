@@ -1,0 +1,139 @@
+{
+  "info": {
+    "_postman_id": "b0dce9f1-f268-4afb-8597-0dc1e9c3e3ed",
+    "name": "AULA 11 - VARIAVEIS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "VARIAVEL LOCAL - https://gorest.co.in/public/v1/posts",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "075bff39-e16a-4ffc-97cc-1c703fe035b7",
+            "exec": [
+              "pm.variables.set(\"id_post\", \"1342\");"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "527f7a62-71cc-4e5b-bbe1-58cd36b1da95",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://gorest.co.in/public/v1/posts/{{id_post}}"
+      },
+      "response": []
+    },
+    {
+      "name": "VARIAVEL AMBIENTE - https://gorest.co.in/public/v1/posts Copy",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "96db1079-459c-429a-a303-390ca0837f97",
+            "exec": [
+              "pm.environment.set(\"id_post\", \"1342\");"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "6a94abfb-af7a-4e9a-931f-8b9048ec3c33",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://gorest.co.in/public/v1/posts/{{id_post}}"
+      },
+      "response": []
+    },
+    {
+      "name": "VARIAVEL COLEÇÃO- https://gorest.co.in/public/v1/posts Copy 2",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "f56d1cfb-9b50-4dae-963e-07fb6d8f4bea",
+            "exec": [
+              "pm.collectionVariables.set(\"id_post\", \"1\");"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "e6889bc3-4f73-422e-affb-858250387b0f",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://gorest.co.in/public/v1/posts/{{id_post}}"
+      },
+      "response": []
+    },
+    {
+      "name": "VARIAVEL GLOBAL- https://gorest.co.in/public/v1/posts Copy 3",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "7e7fe048-82cc-4570-9ce6-41ec6c445479",
+            "exec": [
+              "pm.globals.set(\"id_post\", \"521\");"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "917dc44d-3343-418e-b8b6-61774e256d52",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://gorest.co.in/public/v1/posts/{{id_post}}"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "fd7d917f-231e-4d2d-be40-792a3434e152",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "e7abee11-00d8-44d2-b023-44202b7a1ff9",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "a95435b1-a1b3-4218-9e43-14b2dd2dd832",
+      "key": "id_post",
+      "value": "5555",
+      "type": "string"
+    }
+  ]
+}
