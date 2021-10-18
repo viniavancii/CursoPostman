@@ -31,7 +31,7 @@
                   }
                 }
               ],
-              "_postman_id": "802771c4-be02-4d71-98d4-a51bc09e2984",
+              "id": "802771c4-be02-4d71-98d4-a51bc09e2984",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -40,7 +40,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"ViniciusEu@vinicius.com\",\r\n    \"first_name\": \"nome\",\r\n    \"last_name\": \"sobrenome\",\r\n    \"position\": \"cargo\",\r\n    \"company\": \"empresa\",\r\n    \"company_industry\": \"industria\"\r\n}\r\n\r\n",
+                  "raw": "{\r\n    \"email\": \"{{email_lead}}\",\r\n    \"first_name\": \"{{first_name_lead}}\",\r\n    \"last_name\": \"{{last_name_lead}}\",\r\n    \"position\": \"{{position_lead}}\",\r\n    \"company\": \"{{company_lead}}\",\r\n    \"company_industry\": \"{{company_industry_lead}}\"\r\n}\r\n\r\n",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -180,15 +180,14 @@
               ]
             }
           ],
-          "_postman_id": "c7d02d20-53a9-496d-bb69-a31f62bfa9dd",
-          "_postman_isSubFolder": true
+          "id": "c7d02d20-53a9-496d-bb69-a31f62bfa9dd"
         },
         {
           "name": "Recuperar leads cadastrados",
           "item": [
             {
               "name": "Teste Case - GET Todos Lead",
-              "_postman_id": "7e6f9345-ab84-4f03-9bfc-ac7c1d7b832d",
+              "id": "7e6f9345-ab84-4f03-9bfc-ac7c1d7b832d",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -320,7 +319,7 @@
             },
             {
               "name": "Teste Case - GET Lead Especifico",
-              "_postman_id": "d8dbe067-8333-4906-98c3-d9bc2e357fef",
+              "id": "d8dbe067-8333-4906-98c3-d9bc2e357fef",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -451,8 +450,7 @@
               ]
             }
           ],
-          "_postman_id": "b4be3e09-ffed-43b0-b02a-1325cab39d70",
-          "_postman_isSubFolder": true
+          "id": "b4be3e09-ffed-43b0-b02a-1325cab39d70"
         },
         {
           "name": "Editar lead",
@@ -476,7 +474,7 @@
                   }
                 }
               ],
-              "_postman_id": "461655c1-2c87-4635-8cef-ede2b12dfa08",
+              "id": "461655c1-2c87-4635-8cef-ede2b12dfa08",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -609,15 +607,14 @@
               ]
             }
           ],
-          "_postman_id": "66a3895a-5db9-4890-902e-c9b02fd634e2",
-          "_postman_isSubFolder": true
+          "id": "66a3895a-5db9-4890-902e-c9b02fd634e2"
         },
         {
           "name": "Excluir lead",
           "item": [
             {
               "name": "Teste Case - DELETE Excluir Lead",
-              "_postman_id": "b988d7d6-6f7e-4dea-86e5-12e3ea017ea0",
+              "id": "b988d7d6-6f7e-4dea-86e5-12e3ea017ea0",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -732,11 +729,10 @@
               ]
             }
           ],
-          "_postman_id": "3585fb3f-729b-4154-81e0-018bc8922a92",
-          "_postman_isSubFolder": true
+          "id": "3585fb3f-729b-4154-81e0-018bc8922a92"
         }
       ],
-      "_postman_id": "2c2547f0-81bd-49fe-82b7-7999d044a61c",
+      "id": "2c2547f0-81bd-49fe-82b7-7999d044a61c",
       "description": "Pasta para suites de teste de Leads"
     },
     {
@@ -759,7 +755,7 @@
                   }
                 }
               ],
-              "_postman_id": "b535848a-05fc-4f4d-b0d5-76a0e3933fe5",
+              "id": "b535848a-05fc-4f4d-b0d5-76a0e3933fe5",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -908,15 +904,14 @@
               ]
             }
           ],
-          "_postman_id": "1703883f-0a47-4d77-a66f-2bd84048bcc4",
-          "_postman_isSubFolder": true
+          "id": "1703883f-0a47-4d77-a66f-2bd84048bcc4"
         },
         {
           "name": "Recuperar listas de leads cadastradas",
           "item": [
             {
               "name": "Teste Case - GET Todas Listas Leads",
-              "_postman_id": "05d4c042-edd2-4726-b83a-15a54e666e9f",
+              "id": "05d4c042-edd2-4726-b83a-15a54e666e9f",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -1048,7 +1043,7 @@
             },
             {
               "name": "Teste Case - GET Lista Lead Especifica",
-              "_postman_id": "c7327e0c-c80f-438c-a538-0a21e889de5b",
+              "id": "c7327e0c-c80f-438c-a538-0a21e889de5b",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -1179,8 +1174,7 @@
               ]
             }
           ],
-          "_postman_id": "37195836-4e33-4885-8e41-8d019fb4e3f4",
-          "_postman_isSubFolder": true
+          "id": "37195836-4e33-4885-8e41-8d019fb4e3f4"
         },
         {
           "name": "Editar lista de lead",
@@ -1199,7 +1193,7 @@
                   }
                 }
               ],
-              "_postman_id": "00d7fd5c-e57f-4bc3-9901-b4ecd782aef7",
+              "id": "00d7fd5c-e57f-4bc3-9901-b4ecd782aef7",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -1332,15 +1326,14 @@
               ]
             }
           ],
-          "_postman_id": "ecbdb7e6-eaef-42db-824a-4ba2724021ee",
-          "_postman_isSubFolder": true
+          "id": "ecbdb7e6-eaef-42db-824a-4ba2724021ee"
         },
         {
           "name": "Excluir lista de lead",
           "item": [
             {
               "name": "Teste Case - DELETE Excluir Lista Lead",
-              "_postman_id": "920b5d84-acf8-4a67-ab25-e27b1b3a9e64",
+              "id": "920b5d84-acf8-4a67-ab25-e27b1b3a9e64",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -1455,11 +1448,10 @@
               ]
             }
           ],
-          "_postman_id": "de12080a-c6c0-4070-836f-e90187e7dc54",
-          "_postman_isSubFolder": true
+          "id": "de12080a-c6c0-4070-836f-e90187e7dc54"
         }
       ],
-      "_postman_id": "00c987cb-5f6c-42d5-b02d-2de7598caf82",
+      "id": "00c987cb-5f6c-42d5-b02d-2de7598caf82",
       "description": "Pasta de suites de teste de Leads lists"
     }
   ],
