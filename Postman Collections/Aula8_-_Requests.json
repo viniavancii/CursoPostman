@@ -1,0 +1,86 @@
+{
+  "info": {
+    "_postman_id": "b28a9b78-3837-444b-a40d-81572a575e2a",
+    "name": "AULA 8 - REQUESTS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://gorest.co.in/public/v1/users",
+      "_postman_id": "81282987-b4b2-4d40-bef3-b9de2e200ab8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "970a47f56f35976f2b1ae001b64b96170f48d81da483a06b74dfa0f1592af4fa"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"meta\": null,\r\n    \"data\": {\r\n        \"id\": 43,\r\n        \"name\": \"Allasani Peddana\",\r\n        \"email\": \"allasani.peddan@15ce.com\",\r\n        \"gender\": \"female\",\r\n        \"status\": \"active\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gorest.co.in/public/v1/users/:id",
+          "protocol": "https",
+          "host": [
+            "gorest",
+            "co",
+            "in"
+          ],
+          "path": [
+            "public",
+            "v1",
+            "users",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2191",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "970a47f56f35976f2b1ae001b64b96170f48d81da483a06b74dfa0f1592af4fa"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "a2c9182f-5056-4062-b5e5-d591cca2a5af",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "36dcd845-6dcd-46c0-bae0-eefe8d7a04fb",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
