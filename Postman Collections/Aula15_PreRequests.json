@@ -1,0 +1,94 @@
+{
+  "info": {
+    "_postman_id": "31975e03-452c-40a9-ac29-bfa0855a28c1",
+    "name": "AULA 15 - SCRIPTS DE PRÉ-REQUISIÇÃO",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "f4627890-e9df-433c-9bb5-406b28ba0417",
+            "exec": [
+              "// Pré-script info\r",
+              "/*\r",
+              "console.log(pm.info.eventName)\r",
+              "console.log(pm.info.iteration)\r",
+              "console.log(pm.info.iterationCount)\r",
+              "console.log(pm.info.requestName)\r",
+              "console.log(pm.info.requestId)\r",
+              "\r",
+              "// Pré-script variáveis\r",
+              "\r",
+              "console.log(pm.globals.get(\"token\"))\r",
+              "console.log(pm.environment.get(\"url_base\"))\r",
+              "pm.environment.set(\"id_post\", \"1\");\r",
+              "console.log(pm.environment.get(\"id_post\"))\r",
+              "pm.environment.unset(\"id_post\") //limpa variável especifica\r",
+              "pm.globals.clear() //apaga variaveis\r",
+              "*/\r",
+              "\r",
+              "/*\r",
+              "pm.sendRequest(\"https://gorest.co.in/public/v1/users\", function (err, response) {\r",
+              "    console.log(response.json()) //fazendo um request do mesmo link do método GET\r",
+              "})\r",
+              "*/\r",
+              "\r",
+              "if(pm.environment.get(\"url_base\") != 'https://gorest.co.in'){ //Irá verificar se o valor da variável é diferente do que foi expressado entre aspas simples, se sim imprimirá a mensagem abaixo\r",
+              "    console.log(\"A variável é diferente\")\r",
+              "}\r",
+              "else {\r",
+              "    console.log(\"A variável é igual\") //se não imprimirá essa mensagem\r",
+              "}\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "46817fc9-7af0-4ddf-a9c8-348e7c5805cf",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{url_base}}/public/v1/users"
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "970a47f56f35976f2b1ae001b64b96170f48d81da483a06b74dfa0f1592af4fa"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "15696e0a-b11e-47bb-b9cb-8909c051dc44",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "32609af5-0402-43f9-b70d-78d9083207ec",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
