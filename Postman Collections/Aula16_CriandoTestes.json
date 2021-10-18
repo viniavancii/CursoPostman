@@ -1,0 +1,81 @@
+{
+  "info": {
+    "_postman_id": "142a0ea7-d3fc-4f96-93e6-a4e75cd82b65",
+    "name": "AULA 16 - CRIANDO E EXECUTANDO TESTES",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "comments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "d5501e6d-af5e-42f6-9668-4b2e8fff7b32",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200); //a respota desse teste tem que ter o status 200, ou seja, não dar erro\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Body matches string\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"khatri_baalaaditya@cruickshank.co\"); //verifica se há esse e-mail na resposta\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response time is less than 2000ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000); //verifica se foi executado em menos de 200ms\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Successful POST request\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([201, 202]); //verifica se um POST deu certo\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Content-Type is present\", function () {\r",
+              "    pm.response.to.have.header(\"Content-Type\"); //valida se o content-type está presente no header\r",
+              "});\r",
+              "\r",
+              "console.log('Rodou teste da Requisição')"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "f3098fd0-4bfb-43d0-9101-7bbe23241660",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://gorest.co.in/public/v1/comments"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "44ff3c59-9f86-4d8f-8e2a-63732e6d6626",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "65fe0e16-4270-4864-9787-ec3cfd441f8e",
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status code is 200\", function () {",
+          "    pm.response.to.have.status(200); ",
+          "});",
+          "",
+          "console.log('Rodou o teste da Collection')",
+          ""
+        ]
+      }
+    }
+  ]
+}
