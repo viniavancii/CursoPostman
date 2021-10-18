@@ -1,0 +1,85 @@
+{
+  "info": {
+    "_postman_id": "c549df5b-3e32-46a0-9f3c-96fc5b291197",
+    "name": "AULA 14 - SCRIPT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "167a237b-f5ff-4ef0-8d8a-17f1c11eec31",
+            "exec": [
+              "console.log(\"Pre script executado na requisição\")"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "a468c590-a2e2-4f24-9f89-83e152d98fbe",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "54ea7be0-a3b5-4d67-a855-335e36df26b8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"{{ultimo_nome}}\",\r\n    \"gender\": \"{{genero}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://gorest.co.in/public/v1/users"
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "970a47f56f35976f2b1ae001b64b96170f48d81da483a06b74dfa0f1592af4fa"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "98795237-4d35-458d-a90b-3123995ea1de",
+        "type": "text/javascript",
+        "exec": [
+          "console.log(\"Script na coleção\")"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "6b33463a-2782-49b7-9184-8b3de36f348e",
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status code is 200\", function () {",
+          "    pm.response.to.have.status(201);",
+          "});"
+        ]
+      }
+    }
+  ]
+}
