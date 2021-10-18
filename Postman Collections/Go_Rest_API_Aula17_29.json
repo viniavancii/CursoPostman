@@ -1,0 +1,1750 @@
+{
+  "info": {
+    "_postman_id": "37e37a1e-4ed9-4da4-ada3-2831e33445d5",
+    "name": "GO REST API - AULA 17 - 29",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "USUÁRIOS",
+      "item": [
+        {
+          "name": "Criar usuários",
+          "item": [
+            {
+              "name": "Teste Case - Criar usuário",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "68af0fb5-d8a7-43bb-9c46-da1268fb9f70",
+                    "exec": [
+                      "pm.iterationData.get(\"name_user\")\r",
+                      "pm.iterationData.get(\"genero_user\")\r",
+                      "pm.iterationData.get(\"e-mail_user\")\r",
+                      "pm.iterationData.get(\"status_user\")"
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "b7c12f74-9958-4d80-a72f-efb8aca5bde4",
+                    "exec": [
+                      "pm.test(\"Body matches string\", function () {\r",
+                      "    pm.expect(pm.response.text()).to.include(\"active\");\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "861148de-5413-4d6e-bfc3-8ed71a71223b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"{{name_user}}\",\r\n    \"gender\": \"{{genero_user}}\",\r\n    \"email\": \"{{e-mail_user}}\",\r\n    \"status\": \"{{status_user}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_base}}/users",
+                "description": "Teste para criação de usuários no recurso de Usuários\n\nResultados esperados:\n- Response code = 201\n- String 'active' no corpo do Response\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "69c94360-8aae-4d9c-b101-96778059ac55",
+                  "name": "Teste Case - Criar usuário",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"name\": \"Tenali Ramakrishna\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"tenali.ramakrish@15ce.com\",\r\n    \"status\": \"active\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{url_base}}/users"
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 18:42:04 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "https://gorest.co.in/public/v1/users/2733"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"75377396c3eea854444cf8693a580eac\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "f33c77a4-34ee-4eab-8ebe-781280e2b738"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.016414"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"id\": 2733,\n        \"name\": \"Tenali Ramakrishna\",\n        \"email\": \"tenali.ramakrish@15ce.com\",\n        \"gender\": \"male\",\n        \"status\": \"active\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "766b28e2-7f2f-408c-9482-3a6c529856ea",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Excluir usuários",
+          "item": [
+            {
+              "name": "Teste Case - Excluir usuários",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "da158c19-f3fd-449e-9f1f-483929d7ff27",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6ca0053a-b358-4119-a82d-7702e3631cd9",
+                    "exec": [
+                      "pm.test(\"Status code is 204\", function () {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "d86a3cdd-c370-4bd0-8aac-b146be8af89b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{url_base}}/users/{{id_delete_user}}",
+                "description": "Teste para exclusão de usuários no recurso de Usuários\n\nResultados esperados:\n- Response code = 204\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "2c73398d-8b44-46a7-8aa8-44d43e00edd6",
+                  "name": "Teste Case - Excluir usuários",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": "{{url_base}}/users/{{id_delete_user}}"
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 17:58:42 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "82f42309-6140-40e5-9fde-0196dd4855f5"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.003612"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"message\": \"Resource not found\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "8b297fbc-c2ab-4841-9fdb-370a0a4d61e3",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "5f2ba239-c634-43c4-a3a2-bf49ea823255",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "868ff3cc-b4db-4776-a7d6-d2d997dc3bcb",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Alterar usuários",
+          "item": [
+            {
+              "name": "Teste Case - Alterar usuário",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "1ad86284-4e3a-48ed-98ae-a54655d6f292",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "95dd963f-3859-47bb-9f67-83aa413b5d76",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "eca9b9a3-4040-4465-93dd-6039fb73cdf3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "url": "{{url_base}}/users/{{id_update_user}}",
+                "description": "Teste para alteração de usuários no recurso de Usuários\n\nResultados esperados:\n- Response code = 200\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "97a5efb5-6728-4aa7-b851-51c2d42d78c2",
+                  "name": "Teste Case - Alterar usuário",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [],
+                    "url": "{{url_base}}/users/{{id_update_user}}"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 17:59:00 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"40757b46df59f0cfb999433b23fa8191\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "a821502e-bdd2-426d-af34-bbdaebef9d7e"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.016756"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"id\": 1643,\n        \"name\": \"test\",\n        \"email\": \"Kayley.Okuneva@hotmail.com\",\n        \"gender\": \"male\",\n        \"status\": \"active\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "2078c515-3850-46d7-8421-26a3ef1e66e2",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Buscar Usuários",
+          "item": [
+            {
+              "name": "Teste Case - Buscar Usuários",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "915e86df-18a4-447a-af0f-0dc40272bccd",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "fc84388d-af1d-4bf1-929d-e2c4f4bcd2d4",
+                    "exec": [
+                      "//postman.setNextRequest('Teste Case - Excluir comentário') Serve para pular para esse request\r",
+                      "//console.log(pm.info.requestId) Serve para imprimir ID do request atual"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "3b80c043-596e-47dc-9936-554f4b1e273c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}/users"
+              },
+              "response": [
+                {
+                  "id": "00ed01c8-8652-4019-ac08-9f766bb6087e",
+                  "name": "Teste Case - Buscar Usuários",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}/users"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 19:56:35 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"f45f18904537bf592c50a28b0de2583b\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "22595f36-e9d2-4cb8-ab62-68ce91e2bb71"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.017851"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": {\n        \"pagination\": {\n            \"total\": 2054,\n            \"pages\": 103,\n            \"page\": 1,\n            \"limit\": 20,\n            \"links\": {\n                \"previous\": null,\n                \"current\": \"https://gorest.co.in/public/v1/users?page=1\",\n                \"next\": \"https://gorest.co.in/public/v1/users?page=2\"\n            }\n        }\n    },\n    \"data\": [\n        {\n            \"id\": 2795,\n            \"name\": \"API Monitoring:dy2o9n\",\n            \"email\": \"apimonitoringdy2o9n@synthetic.com\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 2533,\n            \"name\": \"Islam\",\n            \"email\": \"isu1@gmail.com\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 2534,\n            \"name\": \"Vinicius Avanci\",\n            \"email\": \"vinicius.ramakrishna@15ce.com\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 2800,\n            \"name\": \"Clifton Swift\",\n            \"email\": \"Violette.Pagac79@yahoo.com\",\n            \"gender\": \"male\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 2805,\n            \"name\": \"Stephen Herzog\",\n            \"email\": \"Laverne.Grady@hotmail.com\",\n            \"gender\": \"male\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 2807,\n            \"name\": \"Herman Smitham\",\n            \"email\": \"Krystal_Abernathy40@yahoo.com\",\n            \"gender\": \"male\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 2277,\n            \"name\": \"Sara\",\n            \"email\": \"sard8a23@synthetic.com\",\n            \"gender\": \"female\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 2810,\n            \"name\": \"API Monitoring:dnzx2\",\n            \"email\": \"apimonitoringdnzx2@synthetic.com\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Mandaakin Bhattacharya\",\n            \"email\": \"mandaakin_bhattacharya@osinski.info\",\n            \"gender\": \"female\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"The Hon. Trilochan Iyengar\",\n            \"email\": \"iyengar_hon_trilochan_the@bednar-bashirian.name\",\n            \"gender\": \"male\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Sloka Khatri\",\n            \"email\": \"sloka_khatri@kozey-johns.org\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 34,\n            \"name\": \"Laxman Acharya\",\n            \"email\": \"acharya_laxman@morissette.biz\",\n            \"gender\": \"female\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 35,\n            \"name\": \"Swami Kakkar\",\n            \"email\": \"kakkar_swami@mayer.co\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 38,\n            \"name\": \"Ritesh Banerjee\",\n            \"email\": \"banerjee_ritesh@damore-brekke.biz\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 45,\n            \"name\": \"Bodhan Ganaka\",\n            \"email\": \"bodhan_ganaka@paucek.name\",\n            \"gender\": \"female\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 46,\n            \"name\": \"Padma Kaul Sr.\",\n            \"email\": \"sr_padma_kaul@kiehn-erdman.com\",\n            \"gender\": \"female\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 47,\n            \"name\": \"Meghnath Guha\",\n            \"email\": \"meghnath_guha@carroll-treutel.info\",\n            \"gender\": \"female\",\n            \"status\": \"active\"\n        },\n        {\n            \"id\": 48,\n            \"name\": \"Ananda Mehra\",\n            \"email\": \"mehra_ananda@orn-becker.io\",\n            \"gender\": \"female\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 49,\n            \"name\": \"Leela Varma\",\n            \"email\": \"leela_varma@thiel.net\",\n            \"gender\": \"female\",\n            \"status\": \"inactive\"\n        },\n        {\n            \"id\": 50,\n            \"name\": \"Buddhana Nambeesan\",\n            \"email\": \"nambeesan_buddhana@schultz.co\",\n            \"gender\": \"male\",\n            \"status\": \"active\"\n        }\n    ]\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "a4e73203-98fa-43d7-8223-f5198ef13bd4",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "18b02222-6fac-4430-8958-b7bcddd6d8d0"
+    },
+    {
+      "name": "POSTS",
+      "item": [
+        {
+          "name": "Criar posts",
+          "item": [
+            {
+              "name": "Teste Case - Criar posts",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1b986fec-b8df-4027-b212-3e9f4efcbe62",
+                    "exec": [
+                      "pm.test(\"Status code is 201\", function () {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "bdd31fc0-1028-497a-a1e6-198a8343674b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 1,\r\n    \"user_id\": 1,\r\n    \"title\": \"Tredecim substantia deserunt sed dolorem aveho asporto at vulgus cultura nihil contigo atrocitas tamen trans urbs sint.\",\r\n    \"body\": \"Voluptatem depereo capio. Adiuvo aegrotatio curto. Aut socius demergo. Claudeo viriliter recusandae. Maxime unde viduo. Auctor valeo avarus. Accendo delibero sunt. Pecto alter adinventitias. Aufero debeo sollicito. Vinum aiunt depraedor. Combibo absconditus advoco. Degero culpo sollers. Id omnis accommodo. Confero auxilium centum. Ago aperte debilito. Tantum statim cerno. Et ut temporibus. Consuasor versus beatus. Ocer utique velum. Amissio reprehenderit avarus. Corroboro voluptas infit. Supplanto cado abbas. Arcesso thermae ulterius. Sto sunt aut. Aedificium ocer quis. Enim sopor delinquo. Ademptio adficio quisquam.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_base}}/posts",
+                "description": "Teste para criação de post no recurso de Posts\n\nResultados esperados:\n- Response code = 201\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "63b39a9d-16f5-4c88-88af-ce2a69e26fb0",
+                  "name": "Teste Case - Criar posts",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"id\": 1,\r\n    \"user_id\": 1,\r\n    \"title\": \"Tredecim substantia deserunt sed dolorem aveho asporto at vulgus cultura nihil contigo atrocitas tamen trans urbs sint.\",\r\n    \"body\": \"Voluptatem depereo capio. Adiuvo aegrotatio curto. Aut socius demergo. Claudeo viriliter recusandae. Maxime unde viduo. Auctor valeo avarus. Accendo delibero sunt. Pecto alter adinventitias. Aufero debeo sollicito. Vinum aiunt depraedor. Combibo absconditus advoco. Degero culpo sollers. Id omnis accommodo. Confero auxilium centum. Ago aperte debilito. Tantum statim cerno. Et ut temporibus. Consuasor versus beatus. Ocer utique velum. Amissio reprehenderit avarus. Corroboro voluptas infit. Supplanto cado abbas. Arcesso thermae ulterius. Sto sunt aut. Aedificium ocer quis. Enim sopor delinquo. Ademptio adficio quisquam.\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{url_base}}/posts"
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 17:59:12 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "https://gorest.co.in/public-api/posts/1503"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"f9d8b4cb62195e0a006e8c7a352b05aa\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "a7be918e-e709-422f-b91d-46d524511026"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.018157"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"id\": 1503,\n        \"user_id\": 1,\n        \"title\": \"Tredecim substantia deserunt sed dolorem aveho asporto at vulgus cultura nihil contigo atrocitas tamen trans urbs sint.\",\n        \"body\": \"Voluptatem depereo capio. Adiuvo aegrotatio curto. Aut socius demergo. Claudeo viriliter recusandae. Maxime unde viduo. Auctor valeo avarus. Accendo delibero sunt. Pecto alter adinventitias. Aufero debeo sollicito. Vinum aiunt depraedor. Combibo absconditus advoco. Degero culpo sollers. Id omnis accommodo. Confero auxilium centum. Ago aperte debilito. Tantum statim cerno. Et ut temporibus. Consuasor versus beatus. Ocer utique velum. Amissio reprehenderit avarus. Corroboro voluptas infit. Supplanto cado abbas. Arcesso thermae ulterius. Sto sunt aut. Aedificium ocer quis. Enim sopor delinquo. Ademptio adficio quisquam.\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "be901759-8c54-4804-b161-ab38f9cb01c9",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Buscar posts",
+          "item": [
+            {
+              "name": "Teste Case - Buscar Posts",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "686313f7-1c70-4e36-b94d-559a8e148faa",
+                    "exec": [
+                      "pm.test(\"Status code is 20\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "6e32784b-11ab-41d8-88e7-3c430475d439",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {}
+                  }
+                },
+                "url": "{{url_base}}/posts",
+                "description": "Teste para buscar posts no recurso de Posts\n\nResultados esperados:\n- Response code = 200\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "41b96142-f85a-41a7-8a29-05187358f537",
+                  "name": "Teste Case - Buscar Posts",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": "{{url_base}}/posts"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 17:59:23 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"0c888f966c962fe279a0e198ead7b88f\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "f14d16bc-ed03-4a21-90c8-1e1c83bba71b"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.018969"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": {\n        \"pagination\": {\n            \"total\": 1419,\n            \"pages\": 71,\n            \"page\": 1,\n            \"limit\": 20,\n            \"links\": {\n                \"previous\": null,\n                \"current\": \"https://gorest.co.in/public/v1/posts?page=1\",\n                \"next\": \"https://gorest.co.in/public/v1/posts?page=2\"\n            }\n        }\n    },\n    \"data\": [\n        {\n            \"id\": 9,\n            \"user_id\": 7,\n            \"title\": \"Consequuntur usus arcesso crastinus victus quisquam arbitro alius terga viduata quis degero deleniti eos despecto commodi.\",\n            \"body\": \"Subvenio inventore curtus. Temperantia aspernatur vilitas. Accusator et cetera. Ulterius videlicet crepusculum. Soluta statua arbustum. Coniuratio vigilo cattus. Adinventitias cena crinis. Clementia vel beneficium. Aegrus beatus caput. Uter depopulo ullam. Claustrum subnecto vitiosus. Ut consuasor sed. Qui sollers civitas. Catena comis et. Appositus textus absum. Vobis adfectus spero. Color suppono cibo. Celebrer speciosus eum. Denuo dignissimos correptius. Ait blanditiis creta. Theca autem crapula. Verumtamen aqua succedo. Delinquo amplexus substantia.\"\n        },\n        {\n            \"id\": 19,\n            \"user_id\": 17,\n            \"title\": \"Tego peccatus versus consequatur utpote decipio eveniet.\",\n            \"body\": \"Laudantium urbs amita. Vis spero spargo. Conqueror sed officiis. Vestigium vulariter audax. Est laboriosam aliquid. Ars impedit avoco. Creber arx comes. Rerum ut balbus. Vehemens voluptas verto. Atque demo debeo. Tredecim arbitro dolor. Bardus spiculum deduco. Possimus sublime tego. Cubicularis vulgivagus voveo. Voluptatem vinco magnam. Angustus incidunt ait. Vester demo altus. Cuppedia vilis surgo. Causa adamo comprehendo. Valetudo vesper delicate. Sordeo vulpes comitatus. Terror suppellex nobis. Tabgo terebro vix. Deripio vitae vulnero. Delinquo aetas voluptas. Subito voro atqui. Absque alo utroque. Bellum autem tolero. Modi nesciunt commodi.\"\n        },\n        {\n            \"id\": 20,\n            \"user_id\": 17,\n            \"title\": \"Volaticus curvo astrum cuius accusantium aer casso dolor numquam.\",\n            \"body\": \"Aiunt spiculum comitatus. Curia qui succedo. Perspiciatis vivo quia. Sodalitas comedo quod. Vapulus thesis comminor. Qui strenuus conspergo. Aestas corroboro surculus. Utique adulatio denuncio. Coniecto qui tamisium. Bonus nemo coma. Calculus conculco defessus. Velut pauper territo. Aureus ea denique. Vix ait vinum. Quia denego cito. Amiculum dolore cunae. Demum curriculum demonstro. Strues animi tabernus. Cunctatio circumvenio culpo.\"\n        },\n        {\n            \"id\": 27,\n            \"user_id\": 23,\n            \"title\": \"Cruciamentum qui voluptas est thermae adicio confido tutis repellendus tabula bibo toties sophismata audacia agnitio.\",\n            \"body\": \"Stella volo abstergo. Angustus cubitum aqua. Usque constans arx. Succurro aliqua utique. Statim voluptatem dolores. Minima utor at. Acies est umquam. Utroque ullam valens. Trucido concido sit. Beatus vociferor verbum. Vinitor et sufficio. Tres denuncio spectaculum. Repudiandae accommodo verumtamen. Defungo sol talus. Vere adopto quo. Adulatio ut currus. Sint alo demitto. Triginta ter est. Rerum autus bellum. Debeo illum aliquid. Inventore et autem. Quos sonitus statim. Itaque baiulus sustineo. Aut aliquid alo. Confido terreo benevolentia.\"\n        },\n        {\n            \"id\": 28,\n            \"user_id\": 24,\n            \"title\": \"Delinquo bis depono curvus est tredecim veritatis.\",\n            \"body\": \"Correptius denuncio custodia. Ventosus solutio suscipit. Templum ceno compono. Eum tergum curia. Defleo addo causa. Credo strenuus calculus. Coruscus crur caste. Cum torrens et. Ait animi atqui. Doloremque vinum accusantium. Antiquus compello aut. Deprecator trepide arca. Arcesso theca defetiscor. Doloremque dolorem deprecator. Capitulus spectaculum varius. Tripudio animadverto adamo. Speciosus conor alienus. Totam considero voluptatem. Contigo somnus cetera.\"\n        },\n        {\n            \"id\": 29,\n            \"user_id\": 27,\n            \"title\": \"Demoror tristis virga aranea decretum solus terminatio administratio cum.\",\n            \"body\": \"Auctor aedificium sed. Impedit speciosus aegre. Stella triumphus suffragium. Vilitas odit avarus. Canis adinventitias maxime. Contabesco defetiscor suscipit. Alter adamo thermae. Paulatim viduo alo. Tergum adversus aro. Bos architecto adopto. Desipio video varius. Trucido contabesco caterva. Decet cuius vicinus. Adnuo ultra sed. Vulgivagus ocer mollitia. Auctor est cupiditas. Et eveniet praesentium. Aggero comes amoveo. Beatae viriliter viduata. Arbitro arcesso temeritas. Chirographum talis quo. Degenero demitto coma. Tantum carus adeo.\"\n        },\n        {\n            \"id\": 30,\n            \"user_id\": 28,\n            \"title\": \"Cavus odio auctus ipsum cui vitium ago beatus acceptus aestus dolorem adsum cunctatio quaerat allatus antea synagoga contabesco corrigo.\",\n            \"body\": \"Adduco celebrer annus. Tot una conventus. Cohaero tepidus contego. Supra aequitas vilis. Apto cultellus absconditus. Utilis charisma neque. Colligo corroboro denego. A amplitudo degenero. Coruscus demulceo conscendo. Suus succedo tenax. Omnis et tabgo. Modi avoco voco. Adimpleo angulus cerno. Taedium sint tactus. Quia accendo ancilla. Vinculum aliqua coruscus. Soleo itaque crastinus. Aveho cultellus cupiditas. Caute demum acquiro. Debilito cenaculum sperno. Cattus et deficio. Volutabrum pecto verto. Non acies trado.\"\n        },\n        {\n            \"id\": 31,\n            \"user_id\": 28,\n            \"title\": \"Decerno carus quos acerbitas solus maiores cornu ascisco terga fugiat temperantia repellendus thema viriliter nemo bonus cohibeo voluptatum aut.\",\n            \"body\": \"Uxor varius talus. Colloco depopulo calculus. Somniculosus deporto versus. Solio aedificium valeo. Callide cohaero talus. Truculenter sint varius. Volup deripio vilitas. Bellicus conqueror aggero. Virga sulum aperiam. Turpis consequatur certe. Tibi totam vultuosus. Vitium auditor cunae. Adversus ver vetus. Credo ver commodo. Et campana deduco. Decumbo quisquam rerum. Verto bene solutio. Pel asperiores adhaero. Patrocinor crur autem. Ante tricesimus varietas. Ventus temptatio patrocinor. Copia degenero arma. Sordeo suus delicate. Cattus thermae vultuosus. Temptatio delicate bonus. Solutio utrum cerno. Tempore amiculum adimpleo. Nihil somnus auditor. Virga laboriosam acervus.\"\n        },\n        {\n            \"id\": 46,\n            \"user_id\": 39,\n            \"title\": \"Possimus traho deleniti cultellus canto aggero ait quia audentia sunt usus cena.\",\n            \"body\": \"Id argentum tremo. Testimonium uter validus. Iure cruentus autem. Autus administratio et. Defessus demergo degusto. Verumtamen triduana teneo. Inventore custodia torrens. Cultura explicabo aegrotatio. Comburo cursim demum. Commodo tres vesica. Succurro ullam somniculosus. Conitor tondeo volup. Dolore absque unus. Clamo denuncio tutis. Adfero consequatur tribuo. Volubilis ago velociter.\"\n        },\n        {\n            \"id\": 1419,\n            \"user_id\": 1581,\n            \"title\": \"Titleino\",\n            \"body\": \"Messagino\"\n        },\n        {\n            \"id\": 38,\n            \"user_id\": 34,\n            \"title\": \"Uter canto claudeo despirmatio ultra vulgo taedium tenus stabilis baiulus autem numquam canis comedo.\",\n            \"body\": \"Barba colligo vel. Verto sordeo decet. Caries vir aufero. Debeo amaritudo vita. Totidem ustilo stella. Traho suppellex consequatur. Qui concido tres. Totidem asporto amplexus. Pariatur bos adhuc. Est delectatio impedit. Assumenda peccatus copia. Capto altus eos. Vigor a aeternus. Vulgo aegrus calcar. Nostrum via sit. Infit sed curriculum. Tametsi surculus aro. Suppellex sunt decet. Odit paens curvus. Solium vix calco. Adimpleo cultura utpote. Argumentum coniecto aedificium. Quia accusator combibo. Vulnus cribro bibo. Bellicus vix vestigium. Succedo demum audeo.\"\n        },\n        {\n            \"id\": 39,\n            \"user_id\": 34,\n            \"title\": \"Textilis coniecto capillus depopulo eligendi succurro.\",\n            \"body\": \"Charisma pecto assentator. Comis abbas vesco. Blanditiis concido annus. Depopulo tempus veniam. Verto apparatus volubilis. Verto ducimus curo. Pauci adstringo delectus. Nulla strenuus consequatur. Cupressus astrum aut. Decet taceo theologus. Quidem viduata uxor. Bibo comptus quidem. Cibus modi bellum. Cuppedia confero quas. Et absens amitto. Conturbo deporto et. Dedecor omnis theca.\"\n        },\n        {\n            \"id\": 40,\n            \"user_id\": 35,\n            \"title\": \"Debilito claro timidus decretum suscipio ademptio circumvenio tolero et.\",\n            \"body\": \"Velut vultuosus despirmatio. Mollitia tribuo beatae. Centum denuncio ducimus. Perspiciatis vomito alo. Usque quia aqua. Stillicidium casso cum. Verus vitae totidem. Conqueror aeneus depono. Synagoga alveus ut. Aut sustineo architecto. Rerum depromo terminatio. Adulescens viduata ancilla. Ad aegre provident. Cohaero sonitus tutis. Cervus universe solutio. Carpo collum audio. Synagoga ascit doloremque. Capitulus thorax amoveo. Curvus ademptio patria. Illo suscipio minima. Defessus terror corporis. Aequitas ullus apud. Ullam vergo tot. Cultellus sum sumo. Spectaculum infit commodi. Custodia optio valens. Aduro compono creta. Vere sollicito omnis.\"\n        },\n        {\n            \"id\": 43,\n            \"user_id\": 37,\n            \"title\": \"Verbera tergum cedo tabula alioqui spectaculum absque cunae.\",\n            \"body\": \"Depereo vilicus omnis. Doloribus celebrer theca. Patrocinor ultio allatus. Sumptus amoveo desolo. Conturbo absorbeo optio. Aer sequi inventore. Tollo commemoro cogo. Damno tamquam aveho. Vis degero eveniet. Tum velociter adnuo. Demens torrens cetera. Aequus adhaero chirographum. Sint excepturi vinco. Crebro usus decretum. Nam ut absum. Capto aveho tabesco. Tyrannus cogo tam. Conor sint vestigium. Adnuo adhuc paens.\"\n        },\n        {\n            \"id\": 44,\n            \"user_id\": 37,\n            \"title\": \"Demum thymum vitium solvo tripudio cimentarius villa sumo appello inventore depulso cedo id voco denuncio.\",\n            \"body\": \"Cruciamentum surculus arx. Ascit voro stipes. Enim ut turpis. Urbs apto animi. Canonicus arceo accusamus. Soleo vinum brevis. Impedit cognatus aegrus. Aperte testimonium aperiam. Cursim aut accommodo. Vita virgo auditor. Crapula despirmatio cunabula. Tyrannus voluptatem amplitudo. Consectetur ancilla statim. Cupio verto addo. Aequus vorago adficio. Volup triduana commodo. Veniam trucido est. Correptius vociferor video. Pariatur vulgivagus comminor.\"\n        },\n        {\n            \"id\": 45,\n            \"user_id\": 38,\n            \"title\": \"Et solvo assumenda ceno subnecto uterque crudelis vomito voluptatem adhaero antea curriculum tempore tolero spiculum.\",\n            \"body\": \"Tum bellum adfectus. Suadeo adsidue ut. Video expedita quia. Delicate cursus ater. Uberrime adipisci audacia. Coruscus titulus amissio. Vox vergo accusator. Cornu vesica mollitia. Suasoria et tam. Catena apostolus verumtamen. Tamisium talus cunae. Tandem colo arbor. Comedo viriliter utroque. Summopere temptatio non. Accipio virgo cado. Quisquam id collum. Cinis assentator aut. Porro repellat convoco. Pecco creber vere. Et amiculum spes. Statim pax allatus. Quis viduata accusamus. Uterque carus solvo. Tempore cribro iusto. Vinitor defluo attero.\"\n        },\n        {\n            \"id\": 1425,\n            \"user_id\": 560,\n            \"title\": \"Odio provident distinctio temporibus qui debitis voluptates est molestias.\",\n            \"body\": \"Recusandae tempore fugiat eius et et autem perspiciatis dolor unde.\"\n        },\n        {\n            \"id\": 47,\n            \"user_id\": 41,\n            \"title\": \"Triginta ascit quia degenero convoco inventore caput vultuosus.\",\n            \"body\": \"Delectatio vinculum sopor. Angelus amet quam. Ater admitto comburo. Culpa aureus eum. Animi textus deorsum. Argumentum aut creber. Perspiciatis aut audacia. Optio colligo et. Solvo depono decimus. Thesaurus debilito dedico. Canonicus tripudio creator. Quaerat urbanus cresco. Quisquam similique corroboro. Stultus vulgivagus arbustum. Denique utroque est.\"\n        },\n        {\n            \"id\": 48,\n            \"user_id\": 42,\n            \"title\": \"Necessitatibus similique cresco atque voluptate audax abundans viduata claro ait ater suffoco.\",\n            \"body\": \"Utrimque exercitationem architecto. Delectus cupiditas taedium. Blanditiis aeger tollo. Dolor adopto assentator. Bellicus amplus trucido. Minus totam talio. Coerceo vultuosus est. Coma utpote solus. Iusto sumo sunt. Vitae assumenda et. Canto decumbo ambitus. Nihil adiuvo pecunia. Iusto tamquam coniecto. Desino viduata adipisci. Vicinus ipsam contego. Comparo defleo neque. A officia validus. Terreo cui atqui. Amplus dedico totam. Vigor capitulus compono. Cur summopere iusto. Aliqua commodo adnuo.\"\n        },\n        {\n            \"id\": 49,\n            \"user_id\": 43,\n            \"title\": \"Vetus sponte tolero asporto fugit arto dolor coniuratio tandem terga custodia vestrum.\",\n            \"body\": \"Adhaero abeo trucido. Verbera solutio ater. Cervus vulgo curso. Sto cupiditate dolorem. Capio ducimus vomer. Cribro aeneus vulnus. Templum minus coruscus. Strues thema tutamen. Adicio cognatus quia. Adnuo amplitudo patruus. Urbs vere tutamen. Dedecor defendo thalassinus. Aeternus unde sufficio. Votum cupressus pecto. Sumo terra molestias. Eos aperte adopto. Barba cavus triduana. Maxime voluptatibus angelus. Tantum sulum aut. Facilis verbera tergo. Carbo patior angelus. Decor tero nihil. Coniuratio corrupti spoliatio. Usitas abbas conor.\"\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Teste Case - Buscar post especifico",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1409babb-d89f-455f-9283-b9bdbde84e0b",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "7598c351-96a1-4588-861a-86ad98c7a6d8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}/posts/{{id_post_busca}}",
+                "description": "Teste para buscar posts específicos no recurso de Posts\n\nResultados esperados:\n- Response code = 200\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "3954948f-f7e9-45bc-abf3-79fb7805c18d",
+                  "name": "Teste Case - Buscar post especifico",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}/posts/{{id_post_busca}}"
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 17:59:37 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "4d9d6094-258e-4a20-8df0-54a65445401c"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.003625"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"message\": \"Resource not found\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "d03a95e9-9266-4b27-aa5a-6cd0c346d427",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Excluir posts",
+          "item": [
+            {
+              "name": "Teste Case - Excluir Post",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "8df13265-5384-4bcd-8beb-ad22f33aebb3",
+                    "exec": [
+                      "pm.test(\"Status code is 204\", function () {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "7eef2a6a-57a5-4fdb-ab26-019a121f09d8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{url_base}}/posts/{{id_excluir_post}}",
+                "description": "Teste para excluir posts no recurso de Posts\n\nResultados esperados:\n- Response code = 204\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "6f86f08c-d03a-4f73-9b41-940db8819446",
+                  "name": "Teste Case - Excluir Post",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": "{{url_base}}/posts/{{id_excluir_post}}"
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 17:59:58 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "d2d0eed4-14d3-4133-8c54-ace5ccf56bf3"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.003201"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"message\": \"Resource not found\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "18253580-82a7-4c92-bfa5-7785f556a954",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "11443d7b-27be-4576-ab3c-76e642ad0fa9"
+    },
+    {
+      "name": "COMENTÁRIOS",
+      "item": [
+        {
+          "name": "Buscar comentário",
+          "item": [
+            {
+              "name": "Teste Case - Buscar comentário",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "549c74c7-caf2-4438-b836-2d16740ef68c",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "a2b5ed1d-4f7d-44b6-8383-cb035f974519",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}/comments",
+                "description": "Teste para buscar comentários no recurso de Comentários\n\nResultados esperados:\n- Response code = 200\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "f5bce369-58ac-41db-a5e2-6fa8728101bf",
+                  "name": "Teste Case - Buscar comentário",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}/comments"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 18:00:11 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"c4b27724f40dcb3be82f6e33f693156a\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "2b0d93dc-255e-4002-a93e-783695154521"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.019008"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": {\n        \"pagination\": {\n            \"total\": 1356,\n            \"pages\": 68,\n            \"page\": 1,\n            \"limit\": 20,\n            \"links\": {\n                \"previous\": null,\n                \"current\": \"https://gorest.co.in/public/v1/comments?page=1\",\n                \"next\": \"https://gorest.co.in/public/v1/comments?page=2\"\n            }\n        }\n    },\n    \"data\": [\n        {\n            \"id\": 11,\n            \"post_id\": 9,\n            \"name\": \"Durgeshwari Devar\",\n            \"email\": \"durgeshwari_devar@dicki-welch.name\",\n            \"body\": \"Blanditiis aut et. Eos qui deleniti. Maxime odio cumque. Minus fugiat sed.\"\n        },\n        {\n            \"id\": 12,\n            \"post_id\": 9,\n            \"name\": \"Bhadra Banerjee\",\n            \"email\": \"bhadra_banerjee@feeney.com\",\n            \"body\": \"Est accusamus et. Et consectetur sunt. Assumenda fuga optio. Cum reprehenderit distinctio.\"\n        },\n        {\n            \"id\": 23,\n            \"post_id\": 19,\n            \"name\": \"Subhashini Pandey\",\n            \"email\": \"subhashini_pandey@bradtke.biz\",\n            \"body\": \"Laudantium voluptatibus eius.\"\n        },\n        {\n            \"id\": 31,\n            \"post_id\": 27,\n            \"name\": \"Mangalya Sinha\",\n            \"email\": \"mangalya_sinha@adams-kreiger.info\",\n            \"body\": \"Dolorum ipsam labore. Alias reiciendis et. Quo odio consequuntur. Aliquam qui ullam.\"\n        },\n        {\n            \"id\": 32,\n            \"post_id\": 27,\n            \"name\": \"Archan Chaturvedi\",\n            \"email\": \"archan_chaturvedi@renner.info\",\n            \"body\": \"Deserunt natus soluta.\"\n        },\n        {\n            \"id\": 33,\n            \"post_id\": 30,\n            \"name\": \"Gotum Bhattathiri\",\n            \"email\": \"gotum_bhattathiri@dietrich.net\",\n            \"body\": \"Velit aut porro. Saepe et id. Ad quaerat quia. Dolorum rerum sunt.\"\n        },\n        {\n            \"id\": 41,\n            \"post_id\": 38,\n            \"name\": \"Mr. Vidya Pillai\",\n            \"email\": \"pillai_vidya_mr@bayer-jakubowski.biz\",\n            \"body\": \"Ut perspiciatis ad. Quis quis repudiandae.\"\n        },\n        {\n            \"id\": 42,\n            \"post_id\": 39,\n            \"name\": \"Anjaneya Achari\",\n            \"email\": \"anjaneya_achari@leffler-kshlerin.org\",\n            \"body\": \"At architecto reprehenderit. Qui rerum optio.\"\n        },\n        {\n            \"id\": 44,\n            \"post_id\": 45,\n            \"name\": \"Msgr. Esha Saini\",\n            \"email\": \"msgr_saini_esha@boyer.co\",\n            \"body\": \"Tempore qui minus. Quia delectus eum. Voluptatem vel ratione.\"\n        },\n        {\n            \"id\": 45,\n            \"post_id\": 46,\n            \"name\": \"Menaka Adiga\",\n            \"email\": \"menaka_adiga@mosciski.info\",\n            \"body\": \"At aliquid corporis. Esse est autem. Voluptates at quidem. Debitis dolor minus.\"\n        },\n        {\n            \"id\": 46,\n            \"post_id\": 48,\n            \"name\": \"Sen. Kannen Gandhi\",\n            \"email\": \"sen_kannen_gandhi@wolf.info\",\n            \"body\": \"Non omnis magnam. Consequatur molestiae accusantium. Officia asperiores impedit. Perspiciatis recusandae voluptatem.\"\n        },\n        {\n            \"id\": 47,\n            \"post_id\": 51,\n            \"name\": \"Dhaanyalakshmi Pothuvaal\",\n            \"email\": \"dhaanyalakshmi_pothuvaal@kertzmann.com\",\n            \"body\": \"Numquam vitae aut. Molestiae exercitationem dolorem. Commodi aliquam nesciunt. Voluptates porro error.\"\n        },\n        {\n            \"id\": 48,\n            \"post_id\": 53,\n            \"name\": \"Usha Khan\",\n            \"email\": \"usha_khan@abbott-tillman.io\",\n            \"body\": \"Et harum dignissimos. Quia ipsum libero.\"\n        },\n        {\n            \"id\": 49,\n            \"post_id\": 56,\n            \"name\": \"Acaryatanaya Jain\",\n            \"email\": \"acaryatanaya_jain@will.com\",\n            \"body\": \"Voluptatum nihil qui. Et et quasi. Neque dignissimos sed.\"\n        },\n        {\n            \"id\": 50,\n            \"post_id\": 56,\n            \"name\": \"Ramesh Sharma\",\n            \"email\": \"sharma_ramesh@larkin-berge.com\",\n            \"body\": \"At qui ut. Quis totam consectetur.\"\n        },\n        {\n            \"id\": 51,\n            \"post_id\": 57,\n            \"name\": \"Chitraksh Joshi Esq.\",\n            \"email\": \"joshi_chitraksh_esq@klocko-fisher.co\",\n            \"body\": \"Excepturi qui quae.\"\n        },\n        {\n            \"id\": 52,\n            \"post_id\": 57,\n            \"name\": \"Devangana Gill\",\n            \"email\": \"devangana_gill@raynor.name\",\n            \"body\": \"Natus rem omnis.\"\n        },\n        {\n            \"id\": 53,\n            \"post_id\": 59,\n            \"name\": \"Sanka Ahuja\",\n            \"email\": \"sanka_ahuja@gottlieb.net\",\n            \"body\": \"Ut et totam.\"\n        },\n        {\n            \"id\": 54,\n            \"post_id\": 61,\n            \"name\": \"Som Jain\",\n            \"email\": \"som_jain@ledner.net\",\n            \"body\": \"Architecto voluptatibus facilis. Laboriosam dolor accusamus.\"\n        },\n        {\n            \"id\": 55,\n            \"post_id\": 61,\n            \"name\": \"Ghanaanand Namboothiri\",\n            \"email\": \"ghanaanand_namboothiri@osinski.info\",\n            \"body\": \"Animi similique at. Dolores corporis non. Voluptas ut quam. Est quaerat sint.\"\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Teste Case - Buscar comentário especifico",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "d7cdd1cf-3f0d-419e-9f85-94928e1268ea",
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "feb3cab5-6358-4223-a389-409d60cceee7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}/comments/{{id_comentario_busca}}",
+                "description": "Teste para buscar comentários específicos no recurso de Comentários\n\nResultados esperados:\n- Response code = 200\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "e162d1e1-b74a-4d9f-a138-8254a12f268f",
+                  "name": "Teste Case - Buscar comentário especifico",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}/comments/{{id_comentario_busca}}"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 18:00:23 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"e12305a2cf1d0faaa077a51aa8f0c12a\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "cbb835c4-53a6-4d58-a4ab-6d86abb86c46"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.013999"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"id\": 11,\n        \"post_id\": 9,\n        \"name\": \"Durgeshwari Devar\",\n        \"email\": \"durgeshwari_devar@dicki-welch.name\",\n        \"body\": \"Blanditiis aut et. Eos qui deleniti. Maxime odio cumque. Minus fugiat sed.\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "3874570b-4136-431a-9650-e92234592f17",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Criar comentário",
+          "item": [
+            {
+              "name": "Teste Case - Criar comentário",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "b315c042-b1bf-4f6e-98d2-b616d4c6f6ac",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "7f709fd4-f8ef-4929-b43a-a305ef54fe36",
+                    "exec": [
+                      "pm.test(\"Status code is 201\", function () {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "d0647e47-fcab-43ab-b28b-721d804dc241",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 11,\r\n    \"post_id\": 9,\r\n    \"name\": \"Durgeshwari Devar\",\r\n    \"email\": \"durgeshwari_devar@dicki-welch.name\",\r\n    \"body\": \"Blanditiis aut et. Eos qui deleniti. Maxime odio cumque. Minus fugiat sed.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_base}}/comments",
+                "description": "Teste para criar comentário no recurso de Comentários\n\nResultados esperados:\n- Response code = 201\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "02ab7458-46ab-481d-a469-775bf3682d79",
+                  "name": "Teste Case - Criar comentário",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"id\": 11,\r\n    \"post_id\": 9,\r\n    \"name\": \"Durgeshwari Devar\",\r\n    \"email\": \"durgeshwari_devar@dicki-welch.name\",\r\n    \"body\": \"Blanditiis aut et. Eos qui deleniti. Maxime odio cumque. Minus fugiat sed.\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{url_base}}/comments"
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 18:00:41 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "https://gorest.co.in/public-api/comments/1429"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"d9276180e119c262145eae3a30f56f3c\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "9307ecc2-2fb9-4e7c-a7d7-1d8772cd9862"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.017675"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"id\": 1429,\n        \"post_id\": 9,\n        \"name\": \"Durgeshwari Devar\",\n        \"email\": \"durgeshwari_devar@dicki-welch.name\",\n        \"body\": \"Blanditiis aut et. Eos qui deleniti. Maxime odio cumque. Minus fugiat sed.\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "e347e041-eb58-4bfb-b598-04cc92e3a9d0",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Excluir comentário",
+          "item": [
+            {
+              "name": "Teste Case - Excluir comentário",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "9a217efc-0135-4a69-a073-39453247f5d9",
+                    "exec": [
+                      "pm.test(\"Status code is 204\", function () {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "ababb8c5-6d24-49d4-8e7a-1036de76156e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{url_base}}/comments/{{id_excluir_comentario}}",
+                "description": "Teste para exclusão de comentários no recurso de Comentários\n\nResultados esperados:\n- Response code = 204\n- Tempo de espera < 2000ms"
+              },
+              "response": [
+                {
+                  "id": "d3aff77c-4ca6-4352-9040-c68a51db6d16",
+                  "name": "Teste Case - Excluir comentário",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": "{{url_base}}/comments/{{id_excluir_comentario}}"
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 13 Oct 2021 18:00:52 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Origin"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "1; mode=block"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "35418e40-dcfc-4c03-a992-8654f760d19d"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.004086"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=63072000; includeSubDomains"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "gzip"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"meta\": null,\n    \"data\": {\n        \"message\": \"Resource not found\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "ba55d3b3-e785-4080-9f53-93475eb64329",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "277c5b74-7363-4158-9344-c80e78b189d6"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": {
+      "token": "970a47f56f35976f2b1ae001b64b96170f48d81da483a06b74dfa0f1592af4fa"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "f58d447f-b8ce-487f-8ad0-323a2bee358f",
+        "type": "text/javascript",
+        "exec": [
+          "console.log(pm.info.requestName) //imprimirá o nome da requisição antes de executar"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "b99925ff-a9fb-47eb-bc73-c8c87a74467c",
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Response time is less than 2000ms\", function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+          "});",
+          "",
+          "if (pm.request.method == 'POST' )",
+          "pm.test(\"Successful POST request\", function (){ ",
+          "    pm.expect(pm.response.code).to.be.oneOf([201, 202])",
+          "    ",
+          "});"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "713064ee-0830-4fce-856e-03f65b9a6876",
+      "key": "id_comentario_busca",
+      "value": "11",
+      "type": "string"
+    },
+    {
+      "id": "8993dce9-1cc6-462c-bf3a-c3a493438b64",
+      "key": "id_excluir_comentario",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "id": "38e80f3c-b3f0-409b-8d13-ca1a8911f989",
+      "key": "id_post_busca",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "id": "f4309f3e-d658-4786-a9a6-8962c24414c3",
+      "key": "id_excluir_post",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "id": "820f60ce-d6dc-4df9-b395-7135f643639b",
+      "key": "id_delete_user",
+      "value": "16",
+      "type": "string"
+    },
+    {
+      "id": "5f62b79d-c2cb-40d5-98d7-f7a2ae246895",
+      "key": "id_update_user",
+      "value": "11",
+      "type": "string"
+    }
+  ]
+}
