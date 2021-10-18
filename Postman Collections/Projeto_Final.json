@@ -764,7 +764,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"name\": \"lista_criar\"\r\n}\r\n\r\n",
+                  "raw": "{\r\n    \"name\": \"{{name_lead_list}}\"\r\n}\r\n\r\n",
                   "options": {
                     "raw": {
                       "language": "json"
