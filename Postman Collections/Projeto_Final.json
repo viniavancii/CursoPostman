@@ -1,0 +1,1538 @@
+{
+  "info": {
+    "_postman_id": "d5858e43-468a-4867-8db6-089fb6a6423b",
+    "name": "API HUNTER",
+    "description": "Coleção de testes da API HUNTER",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Leads",
+      "item": [
+        {
+          "name": "Criar novo lead",
+          "item": [
+            {
+              "name": "Teste Case - POST Criar Novo Lead",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "1628dd39-b922-4bb3-923f-b9299e130f9a",
+                    "exec": [
+                      "pm.iterationData.get('email_lead')\r",
+                      "pm.iterationData.get('first_name_lead')\r",
+                      "pm.iterationData.get('last_name_lead')\r",
+                      "pm.iterationData.get('position_lead')\r",
+                      "pm.iterationData.get('company_lead')\r",
+                      "pm.iterationData.get('company_industry_lead')"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "802771c4-be02-4d71-98d4-a51bc09e2984",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"ViniciusEu@vinicius.com\",\r\n    \"first_name\": \"nome\",\r\n    \"last_name\": \"sobrenome\",\r\n    \"position\": \"cargo\",\r\n    \"company\": \"empresa\",\r\n    \"company_industry\": \"industria\"\r\n}\r\n\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_base}}leads",
+                "description": "POST - Teste de criação de novo Lead\n\nResultados esperados:\n\n- Response code [201,202]\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "d38c88a2-baf5-4862-97eb-d783e1e20bd6",
+                  "name": "Teste Case - POST Criar Novo Lead",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"email\": \"ViniciusEu@vinicius.com\",\r\n    \"first_name\": \"nome\",\r\n    \"last_name\": \"sobrenome\",\r\n    \"position\": \"cargo\",\r\n    \"company\": \"empresa\",\r\n    \"company_industry\": \"industria\"\r\n}\r\n\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{url_base}}leads"
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:46:26 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "https://api.hunter.io/v2/leads/84536446"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1d0cb962f04c55bbf3de1e29341dee39\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "923fa007-28ca-4524-99eb-8ddbfb39d871"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "4.027285"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01de7f88c9f697-GRU"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"data\": {\n        \"id\": 84536446,\n        \"email\": \"viniciuseu@vinicius.com\",\n        \"first_name\": \"nome\",\n        \"last_name\": \"sobrenome\",\n        \"position\": \"cargo\",\n        \"company\": \"empresa\",\n        \"company_industry\": \"industria\",\n        \"confidence_score\": null,\n        \"website\": \"vinicius.com\",\n        \"country_code\": null,\n        \"company_size\": null,\n        \"source\": null,\n        \"linkedin_url\": null,\n        \"phone_number\": null,\n        \"twitter\": null,\n        \"sync_status\": null,\n        \"notes\": null,\n        \"sending_status\": null,\n        \"last_activity_at\": null,\n        \"last_contacted_at\": null,\n        \"verification\": {\n            \"date\": null,\n            \"status\": null\n        },\n        \"leads_list\": {\n            \"id\": 3182663,\n            \"name\": \"Vinícius' leads\",\n            \"leads_count\": 2\n        }\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "c7d02d20-53a9-496d-bb69-a31f62bfa9dd",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Recuperar leads cadastrados",
+          "item": [
+            {
+              "name": "Teste Case - GET Todos Lead",
+              "_postman_id": "7e6f9345-ab84-4f03-9bfc-ac7c1d7b832d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}leads",
+                "description": "GET - Recuperar todos Leads\n\nResultados esperados:\n\n- Response code 200\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "84f8eac9-1654-4fb5-ab28-512cf99d1c19",
+                  "name": "Teste Case - GET Todos Lead",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}leads"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:49:06 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1455b3df1075c799c2aa064bb1edf222\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "c9c90c2a-2694-4777-b3ac-f14782760e87"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.100299"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01e27e2f2ff697-GRU"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "br"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"data\": {\n        \"leads\": [\n            {\n                \"id\": 84536446,\n                \"email\": \"viniciuseu@vinicius.com\",\n                \"first_name\": \"nome\",\n                \"last_name\": \"sobrenome\",\n                \"position\": \"cargo\",\n                \"company\": \"empresa\",\n                \"company_industry\": \"industria\",\n                \"confidence_score\": null,\n                \"website\": \"vinicius.com\",\n                \"country_code\": null,\n                \"company_size\": null,\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3182663,\n                    \"name\": \"Vinícius' leads\",\n                    \"leads_count\": 3\n                }\n            },\n            {\n                \"id\": 84536429,\n                \"email\": \"viniciusa@vinicius.com\",\n                \"first_name\": \"primeiroo nome\",\n                \"last_name\": \"ultimoo nome\",\n                \"position\": \"cargoo\",\n                \"company\": \"empresaa\",\n                \"company_industry\": \"industriaa\",\n                \"confidence_score\": null,\n                \"website\": \"vinicius.com\",\n                \"country_code\": null,\n                \"company_size\": null,\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3182663,\n                    \"name\": \"Vinícius' leads\",\n                    \"leads_count\": 3\n                }\n            },\n            {\n                \"id\": 84536388,\n                \"email\": \"vinicius@vinicius.com\",\n                \"first_name\": \"primeiro nome\",\n                \"last_name\": \"ultimo nome\",\n                \"position\": \"cargo\",\n                \"company\": \"empresa\",\n                \"company_industry\": \"industria\",\n                \"confidence_score\": null,\n                \"website\": \"vinicius.com\",\n                \"country_code\": null,\n                \"company_size\": null,\n                \"source\": null,\n                \"linkedin_url\": null,\n                \"phone_number\": null,\n                \"twitter\": null,\n                \"sync_status\": null,\n                \"notes\": null,\n                \"sending_status\": null,\n                \"last_activity_at\": null,\n                \"last_contacted_at\": null,\n                \"verification\": {\n                    \"date\": null,\n                    \"status\": null\n                },\n                \"leads_list\": {\n                    \"id\": 3182663,\n                    \"name\": \"Vinícius' leads\",\n                    \"leads_count\": 3\n                }\n            }\n        ]\n    },\n    \"meta\": {\n        \"count\": 3,\n        \"total\": 3,\n        \"params\": {\n            \"limit\": 20,\n            \"offset\": 0\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Teste Case - GET Lead Especifico",
+              "_postman_id": "d8dbe067-8333-4906-98c3-d9bc2e357fef",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}leads/{{id_lead}}",
+                "description": "GET - Recuperar Lead específico\n\nResultados esperados:\n\n- Response code 200\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "4c410433-0efa-4a12-a3a7-15d63b93be4a",
+                  "name": "Teste Case - GET Lead Especifico",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}leads/{{id_lead}}"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:50:21 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e5620e1077a194ba5c09aa0385c3eca\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "b96b14a4-2248-4bde-8d5d-ea54f8b815ce"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.160281"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01e453eacaf697-GRU"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "br"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"data\": {\n        \"id\": 84536446,\n        \"email\": \"viniciuseu@vinicius.com\",\n        \"first_name\": \"nome\",\n        \"last_name\": \"sobrenome\",\n        \"position\": \"cargo\",\n        \"company\": \"empresa\",\n        \"company_industry\": \"industria\",\n        \"confidence_score\": null,\n        \"website\": \"vinicius.com\",\n        \"country_code\": null,\n        \"company_size\": null,\n        \"source\": null,\n        \"linkedin_url\": null,\n        \"phone_number\": null,\n        \"twitter\": null,\n        \"sync_status\": null,\n        \"notes\": null,\n        \"sending_status\": null,\n        \"last_activity_at\": null,\n        \"last_contacted_at\": null,\n        \"verification\": {\n            \"date\": null,\n            \"status\": null\n        },\n        \"leads_list\": {\n            \"id\": 3182663,\n            \"name\": \"Vinícius' leads\",\n            \"leads_count\": 3\n        }\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "b4be3e09-ffed-43b0-b02a-1325cab39d70",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Editar lead",
+          "item": [
+            {
+              "name": "Teste Case - PUT Editar Lead",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "f6dc6ffd-37fd-4da4-bbc5-79fed310f7b3",
+                    "exec": [
+                      "pm.iterationData.get('email_lead_edit')\r",
+                      "pm.iterationData.get('first_name_lead_edit')\r",
+                      "pm.iterationData.get('last_name_lead_edit')\r",
+                      "pm.iterationData.get('position_lead_edit')\r",
+                      "pm.iterationData.get('company_lead_edit')\r",
+                      "pm.iterationData.get('company_industry_lead_edit')"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "461655c1-2c87-4635-8cef-ede2b12dfa08",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"Vinicius_edit@vinicius.com\",\r\n    \"first_name\": \"primeiro nome_edit\",\r\n    \"last_name\": \"ultimo nome_edit\",\r\n    \"position\": \"cargo_edit\",\r\n    \"company\": \"empresa_edit\",\r\n    \"company_industry\": \"industria_edit\"\r\n}\r\n\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_base}}leads/{{id_lead}}",
+                "description": "PUT - Editar Lead\n\nResultados esperados:\n\n- Response code 204\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "cde96b3f-0ef9-44cc-b8cc-2d7e00ffab36",
+                  "name": "Teste Case - PUT Editar Lead",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"email\": \"Vinicius_edit@vinicius.com\",\r\n    \"first_name\": \"primeiro nome_edit\",\r\n    \"last_name\": \"ultimo nome_edit\",\r\n    \"position\": \"cargo_edit\",\r\n    \"company\": \"empresa_edit\",\r\n    \"company_industry\": \"industria_edit\"\r\n}\r\n\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{url_base}}leads/{{id_lead}}"
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "plain",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:51:34 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "e7f8e7f1-3615-48b6-af7a-69fe37c652e6"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "10.233923"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01e5d95ce6f697-GRU"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "_postman_id": "66a3895a-5db9-4890-902e-c9b02fd634e2",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Excluir lead",
+          "item": [
+            {
+              "name": "Teste Case - DELETE Excluir Lead",
+              "_postman_id": "b988d7d6-6f7e-4dea-86e5-12e3ea017ea0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{url_base}}leads/{{id_lead}}",
+                "description": "DELETE - Excluir Lead\n\nResultados esperados:\n\n- Response code 204"
+              },
+              "response": [
+                {
+                  "id": "8198ef33-ac87-4423-9466-c84ed330695e",
+                  "name": "Teste Case - DELETE Excluir Lead",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": "{{url_base}}leads/{{id_lead}}"
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "plain",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:52:33 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "63cdd115-7ab5-4e58-a06e-35ceb4485e1b"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "10.235109"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01e74b8be4f697-GRU"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "_postman_id": "3585fb3f-729b-4154-81e0-018bc8922a92",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "2c2547f0-81bd-49fe-82b7-7999d044a61c",
+      "description": "Pasta para suites de teste de Leads"
+    },
+    {
+      "name": "Leads_Lists",
+      "item": [
+        {
+          "name": "Criar nova lista de lead",
+          "item": [
+            {
+              "name": "Teste Case - POST Criar Lista Lead",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "42eda2b2-256f-48d9-8d26-3476a8a249a5",
+                    "exec": [
+                      "pm.iterationData.get('name_lead_list')"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "b535848a-05fc-4f4d-b0d5-76a0e3933fe5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"lista_criar\"\r\n}\r\n\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_base}}leads_lists",
+                "description": "POST - Criar Lista Lead\n\nResultados esperados:\n\n- Response code [201,202]\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "9da82f3c-c8a7-42f1-9215-3e1f34e91e33",
+                  "name": "Teste Case - POST Criar Lista Lead",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"name\": \"lista_criar\"\r\n}\r\n\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{url_base}}leads_lists"
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:54:05 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "https://api.hunter.io/v2/leads_lists/3187382"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"6adad0069091ca69eb1b3f48019da86e\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "d800d40d-f27d-49f2-aad5-5e69972d3162"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.139725"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01e9ca9c64f697-GRU"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"data\": {\n        \"list_id\": 3187382,\n        \"name\": \"lista_criar\"\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "1703883f-0a47-4d77-a66f-2bd84048bcc4",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Recuperar listas de leads cadastradas",
+          "item": [
+            {
+              "name": "Teste Case - GET Todas Listas Leads",
+              "_postman_id": "05d4c042-edd2-4726-b83a-15a54e666e9f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}leads_lists",
+                "description": "GET - Recuperar todas as Listas Leads\n\nResultados esperados:\n\n- Response code 200\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "218650b4-853f-4e41-bf9f-b9a7a7bd6698",
+                  "name": "Teste Case - GET Todas Listas Leads",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}leads_lists"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:55:04 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"e1840cc6adb01b9ee9d2fb1a2c9c542e\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "43bce3e0-e7b3-493a-b7d6-8fd91ae918ff"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.044186"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01eb3aac7df697-GRU"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "br"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"data\": {\n        \"leads_lists\": [\n            {\n                \"id\": 3187382,\n                \"name\": \"lista_criar\",\n                \"leads_count\": 0\n            },\n            {\n                \"id\": 3182663,\n                \"name\": \"Vinícius' leads\",\n                \"leads_count\": 2\n            }\n        ]\n    },\n    \"meta\": {\n        \"total\": 2,\n        \"params\": {\n            \"limit\": 20,\n            \"offset\": 0\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Teste Case - GET Lista Lead Especifica",
+              "_postman_id": "c7327e0c-c80f-438c-a538-0a21e889de5b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_base}}leads_lists/{{id_lead_list}}",
+                "description": "GET - Recuperar Lista Lead especifica \n\nResultados esperados:\n\n- Response code 200\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "17dae6ac-4417-4fe8-b61c-af2a8ab4dd64",
+                  "name": "Teste Case - GET Lista Lead Especifica",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": "{{url_base}}leads_lists/{{id_lead_list}}"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:55:48 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1486dd459648f2253b4bd904017af310\""
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "max-age=0, private, must-revalidate"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "c7e68d78-e813-4219-b099-36d8ba6a65b8"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.062250"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01ec4ea8c4f697-GRU"
+                    },
+                    {
+                      "key": "Content-Encoding",
+                      "value": "br"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"data\": {\n        \"name\": \"lista_criar\",\n        \"leads_count\": 0,\n        \"leads\": []\n    },\n    \"meta\": {\n        \"params\": {\n            \"limit\": 20,\n            \"offset\": 0,\n            \"leads_list_id\": 3187382\n        }\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "_postman_id": "37195836-4e33-4885-8e41-8d019fb4e3f4",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Editar lista de lead",
+          "item": [
+            {
+              "name": "Teste Case - PUT Editar Lead List",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "7f508d12-036b-43f0-8a09-edfc1d2e8e4e",
+                    "exec": [
+                      "pm.iterationData.get('name_lead_list_edit')"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "00d7fd5c-e57f-4bc3-9901-b4ecd782aef7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"lista editar\"\r\n}\r\n\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_base}}leads_lists/{{id_lead_list}}",
+                "description": "PUT - Editar Lista Lead\n\nResultados esperados:\n\n- Response code 204\n- Execução < 2 seg"
+              },
+              "response": [
+                {
+                  "id": "02e5db5b-ba8c-4236-aaea-a168aadbcc20",
+                  "name": "Teste Case - PUT Editar Lead List",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"name\": \"lista editar\"\r\n}\r\n\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": "{{url_base}}leads_lists/{{id_lead_list}}"
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "plain",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:58:00 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "14e5d5ee-37a1-4e72-b0ad-8110b8b74ec1"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.108851"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01ef884923f697-GRU"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "_postman_id": "ecbdb7e6-eaef-42db-824a-4ba2724021ee",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Excluir lista de lead",
+          "item": [
+            {
+              "name": "Teste Case - DELETE Excluir Lista Lead",
+              "_postman_id": "920b5d84-acf8-4a67-ab25-e27b1b3a9e64",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{url_base}}leads_lists/{{id_lead_list}}",
+                "description": "DELETE - Excluir Lista Leads\n\nResultados esperados:\n\n- Response code 204"
+              },
+              "response": [
+                {
+                  "id": "b082d4d5-09b8-47b9-aac1-00ab6342e863",
+                  "name": "Teste Case - DELETE Excluir Lista Lead",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": "{{url_base}}leads_lists/{{id_lead_list}}"
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "plain",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Mon, 18 Oct 2021 12:58:35 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                      "key": "Permissions-Policy",
+                      "value": "interest-cohort=()"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Methods",
+                      "value": "GET, POST, PUT, DELETE, OPTIONS"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Headers",
+                      "value": "Email-Hunter-Origin"
+                    },
+                    {
+                      "key": "X-User",
+                      "value": "2934486"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Request-Id",
+                      "value": "644b25dc-4be1-4232-bbfa-3282d23acf64"
+                    },
+                    {
+                      "key": "X-Runtime",
+                      "value": "0.208606"
+                    },
+                    {
+                      "key": "Via",
+                      "value": "1.1 google"
+                    },
+                    {
+                      "key": "Alt-Svc",
+                      "value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-27=\":443\"; ma=86400"
+                    },
+                    {
+                      "key": "CF-Cache-Status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "Expect-CT",
+                      "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains; preload"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "CF-RAY",
+                      "value": "6a01f064085bf697-GRU"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null
+                }
+              ]
+            }
+          ],
+          "_postman_id": "de12080a-c6c0-4070-836f-e90187e7dc54",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "00c987cb-5f6c-42d5-b02d-2de7598caf82",
+      "description": "Pasta de suites de teste de Leads lists"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": {
+      "in": "query",
+      "value": "c693e8ab9b83e7379f0b8adde7ef7a893ae08723",
+      "key": "api_key"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "90a27783-78e3-4b9f-a75b-1b096b29e9ff",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "3a83a217-967a-4c27-9d26-6daa11bf75b8",
+        "type": "text/javascript",
+        "exec": [
+          "/* Testes para requisições GET",
+          "Status code: 200 */",
+          "",
+          "if(pm.request.method == 'GET'){",
+          "    pm.test(\"Status code is 200\", function () {",
+          "        pm.response.to.have.status(200);",
+          "    });",
+          "}",
+          "",
+          "/* Testes para requisições GET e PUT",
+          "Tempo de execução < 2 seg */",
+          "",
+          "if(pm.request.method == 'GET' || pm.request.method == 'PUT' || pm.request.method == 'POST'){",
+          "    pm.test(\"Response time is less than 2s\", function () {",
+          "        pm.expect(pm.response.responseTime).to.be.below(2000);",
+          "    });",
+          "}",
+          "",
+          "/* Testes para requisições POST",
+          "Status code: 201 ou 202 */",
+          "",
+          "if(pm.request.method == 'POST'){",
+          "    pm.test(\"Successful POST request\", function () {",
+          "        pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+          "    });",
+          "",
+          "if(pm.info.requestName == 'Teste Case - POST Criar Novo Lead'){",
+          "    pm.environment.set('id_lead',pm.response.json().data.id); //Ter acesso ao valor do ID e setar ele na variavel de ambiente - JSON PATH FINDER",
+          "    }",
+          "",
+          "if(pm.info.requestName == 'Teste Case - POST Criar Lista Lead'){",
+          "    pm.environment.set('id_lead_list',pm.response.json().data.list_id); //Ter acesso ao valor do ID e setar ele na variavel de ambiente - JSON PATH FINDER",
+          "    }",
+          "}",
+          "",
+          "/* Testes para requisições DELETE e PUT",
+          "Status code: 204 */",
+          "",
+          "if(pm.request.method == 'DELETE' || pm.request.method == 'PUT'){",
+          "    pm.test(\"Status code is 204\", function () {",
+          "        pm.response.to.have.status(204);",
+          "    });",
+          "}"
+        ]
+      }
+    }
+  ]
+}
