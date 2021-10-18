@@ -1,0 +1,98 @@
+{
+  "info": {
+    "_postman_id": "9d26c8e9-ec7f-4859-8c2f-f26aec317902",
+    "name": "AULA 12 - VARIAVEIS PART.2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://gorest.co.in/public/v1/users",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "bcb80124-51ef-40e6-b3bc-7801c3c2deca",
+            "exec": [
+              "pm.collectionVariables.set(\"nome_pessoa\", \"Vinicius Avanci\");\r",
+              "pm.collectionVariables.set(\"genero\", \"male\");\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "e9720e3e-69c5-41ab-8051-65fb0c13a904",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url_base}}/public/v1/users?name={{nome_pessoa}}&gender={{genero}}",
+          "host": [
+            "{{url_base}}"
+          ],
+          "path": [
+            "public",
+            "v1",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "{{nome_pessoa}}"
+            },
+            {
+              "key": "gender",
+              "value": "{{genero}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "7a78b247-b54e-49c8-9744-bd19b896772d",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "3e7a162e-3e6a-405d-9184-01892aa4a401",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "74973cbc-d59a-4e07-88bc-4447832b860f",
+      "key": "genero",
+      "value": "male",
+      "type": "string"
+    },
+    {
+      "id": "689e3992-37c5-4318-92cc-3384152620f6",
+      "key": "nome_pessoa",
+      "value": "Vinicius Avanci",
+      "type": "string"
+    }
+  ]
+}
